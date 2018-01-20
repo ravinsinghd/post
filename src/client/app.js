@@ -1,6 +1,18 @@
-const statusEntry = require('./templates/status-entry.html');
+import { DOMHelper } from './dom-helper';
+import * as statusField from './templates/status-entry.html';
 
-const body = document.querySelector('body');
+
+window.onload = function () {
+  const domHelper = new DOMHelper();
+  domReady(domHelper);
+}
 
 
-body.insertAdjacentHTML('beforeend', statusEntry);
+function domReady(domHelper) {
+  domHelper.appendStringToDOM('body', statusField);
+}
+
+
+
+
+
