@@ -1,4 +1,6 @@
-import * as statusEntry from './templates/status-entry.html';
+const statusEntry = require('./templates/status-entry.html');
 
 const body = document.querySelector('body');
-body.innerHTML = statusEntry;
+
+
+body.insertAdjacentHTML('beforeend', statusEntry);
