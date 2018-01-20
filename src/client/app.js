@@ -1,17 +1,17 @@
-import { DOMHelper } from './dom-helper';
+import { domHelper } from './helpers/dom-helper';
+import { statusFieldInit } from './status-update/status-update';
 import * as layout from './templates/layout.html';
-import * as statusField from './templates/status-entry.html';
 
 
 window.onload = function () {
-  const domHelper = new DOMHelper();
-  domReady(domHelper);
+  domReady();
 }
 
 
-function domReady(domHelper) {
+function domReady() {
   domHelper.appendStringToDOM('body', layout);
-  domHelper.appendStringToDOM('main', statusField);
+  statusFieldInit();
+
 }
 
 

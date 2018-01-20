@@ -1,6 +1,6 @@
-export class DOMHelper {
+export const domHelper = {
 
-  appendStringToDOM(parentSelector, htmlString) {
+  appendStringToDOM: function (parentSelector, htmlString) {
     const parentEle = document.querySelector(parentSelector);
     if (parentEle) {
       parentEle.insertAdjacentHTML('beforeend', htmlString);
