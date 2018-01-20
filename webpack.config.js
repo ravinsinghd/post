@@ -2,7 +2,9 @@ const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/client/app.js',
+  entry: ['./src/client/app.js',
+    './src/client/style/main.scss'
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.js'
@@ -13,6 +15,15 @@ module.exports = {
       use: {
         loader: 'html-loader'
       }
+    }, {
+      test: /\.scss$/,
+      use: [{
+        loader: "style-loader" // creates style nodes from JS strings
+      }, {
+        loader: "css-loader" // translates CSS into CommonJS
+      }, {
+        loader: "sass-loader" // compiles Sass to CSS
+      }]
     }]
   },
   plugins: [
@@ -21,7 +32,4 @@ module.exports = {
     })
   ],
   devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist'
-  },
 };
