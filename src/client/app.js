@@ -1,6 +1,6 @@
 import { domHelper } from './helpers/dom-helper';
 import { statusFieldInit } from './status-update/status-update';
-import * as layout from './templates/layout.html';
+import * as layout from './layout/layout.html';
 
 
 window.onload = function () {
@@ -13,6 +13,10 @@ function domReady() {
   statusFieldInit();
 
 }
+
+(function serviceWorkerInit() {
+  navigator.serviceWorker.register('../../service.worker.js');
+})();
 
 
 
