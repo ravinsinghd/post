@@ -14,6 +14,10 @@ function domReady() {
 
 }
 
+(function serviceWorkerInit() {
+  navigator.serviceWorker.register('../../service.worker.js');
+})();
+
 
 
 
